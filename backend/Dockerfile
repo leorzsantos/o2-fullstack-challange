@@ -13,6 +13,12 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
+# Install Prisma CLI globally
+RUN npm install -g prisma
+
+# Generate Prisma client
+RUN npx prisma generate
+
 # Expose the application port
 EXPOSE 5001
 
