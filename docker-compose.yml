@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./backend
+    ports:
+      - "5001:5001"
+    env_file:
+      - ./backend/.env
+    environment:
+      DATABASE_URL: "mysql://root:root@db:3306/produtos"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    command: npx prisma migrate dev && npm start
+    depends_on:
+      - db
+
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: produtos
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
