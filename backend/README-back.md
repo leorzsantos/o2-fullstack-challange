@@ -64,6 +64,13 @@ Ensure you have the following installed on your machine:
    $ npm install
    ```
 
+
+   2.1. Copy the `.env.example` file to `.env`:
+
+      ```bash
+      cp backend/.env.example backend/.env
+      ```
+
 3. **Build and Start the Containers**:
   Use Docker Compose to build and start the containers. This will set up the application and its dependencies as defined in the docker-compose.yml file.
    ```bash
