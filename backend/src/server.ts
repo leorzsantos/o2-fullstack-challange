@@ -8,6 +8,8 @@ import env from '../environment';
 import { ProdutosRoutes } from "./routes/produtos_routes";
 import { TestRoutes } from "./routes/test_route";
 import { MovimentacaoRoutes } from "./routes/movimentacao_routes";
+import 'reflect-metadata';
+import { EstoqueRoutes } from "./routes/estoque_routes";
 
 class Server {
 
@@ -18,6 +20,7 @@ class Server {
   private common_routes: CommonRoutes = new CommonRoutes();
   private produtos_routes: ProdutosRoutes = new ProdutosRoutes();
   private movimentacao_routes: MovimentacaoRoutes = new MovimentacaoRoutes();
+  private estoque_routes: EstoqueRoutes = new EstoqueRoutes();
 
   public static bootstrap(): Server {
     return new Server();
@@ -32,6 +35,7 @@ class Server {
     this.test_routes.route(this.app);
     this.produtos_routes.route(this.app);
     this.movimentacao_routes.route(this.app);
+    this.estoque_routes.route(this.app);
     this.common_routes.route(this.app);
   }
 

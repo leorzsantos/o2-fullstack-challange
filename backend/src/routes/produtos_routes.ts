@@ -23,5 +23,8 @@ export class ProdutosRoutes {
         app.delete('/v1/produtos/:id', cors(), (req: Request, res: Response) => {
             this.produto_controller.delete(req, res);
         });
+        app.get('/v1/all-produtos', cors(), (req: Request, res: Response) => {
+            this.produto_controller.getAll(req, res);
+        });
     }
 }

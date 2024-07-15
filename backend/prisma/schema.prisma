@@ -20,6 +20,7 @@ model Produto {
   quantidadeDisponivel Int
   precoUnitario     Float
   categoria         String
+  ativo             Boolean
   createdAt         DateTime  @default(now())
   updatedAt         DateTime  @updatedAt
   movimentacoes     Movimentacao[]
