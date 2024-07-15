@@ -74,7 +74,6 @@ export default function Relatorio() {
             dataFim: finalDate.toISOString()
         };
 
-        console.log(JSON.stringify(dateRange));
         try {
             const movements = await getMovementsByDate(dateRange);
             setMovimentacao(movements);

@@ -28,10 +28,9 @@ export default function CreatePage() {
             console.error("Erro ao registrar o produto:", error);
             alert("Erro ao registrar o produto. Tente novamente.");
         }
-        console.log(data);
     });
     const onError: SubmitErrorHandler<FormData> = (errors) => console.log(errors);
-    console.log(register("nome"));
+    
     return (
         <div>
             <h2 className="text-2xl font-bold my-8">Criar Novo Produto</h2>

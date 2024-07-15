@@ -19,7 +19,6 @@ export default function EditPage() {
         const fetchProduct = async () => {
             try {
                 const product = await getProduct(id);
-                console.log("Produto:", product);
                 setValue("nome", product.nome);
                 setValue("descricao", product.descricao);
                 setValue("quantidade", product.quantidade);
@@ -48,10 +47,8 @@ export default function EditPage() {
             console.error("Erro ao registrar o produto:", error);
             alert("Erro ao registrar o produto. Tente novamente.");
         }
-        console.log(data);
     });
     const onError: SubmitErrorHandler<FormData> = (errors) => console.log(errors);
-    console.log(register("nome"));
     return (
         <div>
             {loading ? (<p>Carregando</p>) : <div>

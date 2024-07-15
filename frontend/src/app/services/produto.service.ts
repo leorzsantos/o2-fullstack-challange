@@ -19,9 +19,6 @@ export const getProducts = async (): Promise<ProdutosDto[]> => {
 
 export const createProduct = async (produto: ProdutoRequestDto): Promise<ProdutosDto> => {
     try {
-        console.log("url: ", CREATE_PRODUCT);
-        console.log("produto: ", produto);
-        console.log(JSON.stringify(produto));
         const response = await axios.post<ProdutosDto>(CREATE_PRODUCT, produto);
         return response.data;
     } catch (error) {
